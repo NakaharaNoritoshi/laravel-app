@@ -7,7 +7,7 @@
 </div>
 
 <div class="contact_form_list">
-    <div class="contact_form_list_forth">お問い合わせ<br>内容の入力</div>
+    <div class="contact_form_list_fourth">お問い合わせ<br>内容の入力</div>
     <div class="contact_form_list_fifth">お問い合わせ<br>内容の確認</div>
     <div class="contact_form_list_sixth">送信完了</div>
 </div>
@@ -16,25 +16,29 @@
     <h3>お客様の情報を入力してください</h3>
 </div>
 
-<form method="post" action="">@csrf
+<form method="post" action="{{ route('contact.send') }}">@csrf
     <table class="contact_form_table">
         <tr>
             <td class="contact_form_table_left">お名前
                 <span class="required_item_mark">*</span>
             </td>
             <td class="contact_form_table_right">
-                <input type="text" name="name" placeholder="お名前を入力してください">
+                <input type="hidden" name="name" value="{{ $name }}">{{ $name }}
             </td>
         </tr>
         <tr>
             <td class="contact_form_table_left">メールアドレス
                 <span class="required_item_mark">*</span>
             </td>
-            <td class="contact_form_table_right"><input type="text" name="mail" placeholder="メールアドレスを入力してください"></td>
+            <td class="contact_form_table_right">
+                <input type="hidden" name="mail" value="{{ $mail }}">{{ $mail }}
+            </td>
         </tr>
         <tr>
             <td class="contact_form_table_left"></td>
-            <td class="contact_form_table_right"><input type="text" name="mail_confimation" placeholder="確認のためもう1度入力してください"></td>
+            <td class="contact_form_table_right">
+                <input type="hidden" name="mail_confimation" value="{{ $mail }}">{{ $mail }}
+            </td>
         </tr>
     </table>
 
@@ -46,13 +50,17 @@
             <td class="contact_form_table_left">タイトル
                 <span class="required_item_mark">*</span>
             </td>
-            <td class="contact_form_table_right"><input type="text" name="title" placeholder="タイトルを入力してください"></td>
+            <td class="contact_form_table_right">
+                <input type="hidden" name="title" value="{{ $title }}">{{ $title }}
+            </td>
         </tr>
         <tr>
             <td class="contact_form_table_left">内容
                 <span class="required_item_mark">*</span>
             </td>
-            <td class="contact_form_table_right"><textarea name="text" name="content" placeholder="内容を入力してください"></textarea></td>
+            <td class="contact_form_table_right">
+                <input type="hidden" name="content" value="{{ $content }}">{{ $content }}
+            </td>
         </tr>
     </table>
     <span class="required_item_sentence">*は必須項目です</span>

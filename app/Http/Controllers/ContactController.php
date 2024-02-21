@@ -6,6 +6,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\Contact;
+use Illuminate\Auth\Events\Validated;
+use Illuminate\Http\Request;
 
 class ContactController extends BaseController
 {
@@ -23,13 +25,25 @@ class ContactController extends BaseController
         return view('contact.index');
     }
 
-    public function confirm()
+    public function confirm(Request $request)
     {
-        return view('contact.confirm');
+        $request->validate([
+            'name' => 'required',
+            'mail' => 'required',
+            'title' => 'required',
+            'content' => 'required',
+        ]);
+        $data = $request->only(['name', 'mail', 'mail_confirmation', 'title', 'content']);
+
+        return view('contact.confirm', $data);
     }
 
-    public function send()
+    public function send(Request $request)
     {
-        return view('contact.send');
+        $data = $request->only(['name']);
+        $attributes = $request->only(['name', 'mail', 'mail_confirmation', 'title', 'content']);
+        Contact::create($attributes);
+
+        return view('contact.send', $data);
     }
 }

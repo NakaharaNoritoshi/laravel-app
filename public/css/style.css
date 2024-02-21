@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
 }
-/* 1つ目 */
+/* 1つ目(contact) */
 .contact_form_list_first {
     background-color: #b0c4de;
     margin-right: 20px;
@@ -20,20 +20,66 @@
     text-align: center;
     padding: 10px 0;
 }
-/* 2つ目 */
+/* 2つ目(contact) */
 .contact_form_list_second {
     margin-right: 20px;
     padding: 10px 0;
 }
 .contact_form_list_second,.contact_form_list_third {
+    background-color: #b0c4de;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    opacity: 50%;
+}
+/* 3つ目(contact) */
+.contact_form_list_third {
+    padding-top: 20px;
+}
+/* 4つ目(confirm) */
+.contact_form_list_fourth {
     background-color: #c0c0c0;
     width: 150px;
     height: 50px;
     text-align: center;
+    margin-right: 20px;
+    padding: 10px 0
 }
-/* 3つ目 */
-.contact_form_list_third {
-    padding-top: 20px;
+/* 5つ目(confirm) */
+.contact_form_list_fifth {
+    background-color: #b0c4de;
+    margin-right: 20px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    padding: 10px 0;
+}
+/* 6つ目(confirm) */
+.contact_form_list_sixth {
+    background-color: #b0c4de;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    padding: 20px 0;
+    opacity: 50%;
+}
+/* 7つ目(send)、8つ目(send) */
+.contact_form_list_seventh, .contact_form_list_eighth {
+    background-color: #c0c0c0;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    margin-right: 20px;
+    padding: 10px 0
+}
+/* 9つ目(send) */
+.contact_form_list_ninth {
+    background-color: #b0c4de;
+    margin-right: 20px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    padding: 20px 0;
 }
 /* お問い合わせフォーム。お客様の情報、お問い合わせ内容のタイトル */
 .contact_form_mini_title {
@@ -102,4 +148,23 @@
 }
 .contact_form_button_set input:hover {
     background: #e6e6fa;
+}
+/* 送信完了ページtextの設定 */
+.contact_form_complete {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.back_to_top_link {
+    margin-top: 50px;
+    margin-left: 47%;
+}
+/* 送信完了ページ送信名前の設定 */
+.after_sending_name {
+    color: #ffa500;
+}
+/* validationエラー時に出る文 */
+.validation_error_statement {
+    font-size: 12px;
+    color: red;
 }
