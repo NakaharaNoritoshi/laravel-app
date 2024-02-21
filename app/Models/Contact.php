@@ -19,8 +19,8 @@ class Contact extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'email_confirm',
+        'mail',
+        'mail_confimation',
         'title',
         'content',
     ];
