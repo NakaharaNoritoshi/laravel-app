@@ -2,6 +2,10 @@
 
 @section('content')
 
+<div class="go_to_management_link">
+    <a href="{{ route('contact.list') }}">お問い合わせ管理へ移動する</a>
+</div>
+
 <div class="contact_form_title">
     <h2>お問い合わせフォーム</h2>
 </div>

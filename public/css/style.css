@@ -154,10 +154,20 @@
     text-align: center;
     margin-top: 50px;
 }
-
+/* TOP(index)ページへ戻る設定 */
 .back_to_top_link {
     margin-top: 50px;
     margin-left: 47%;
+}
+/* indexから管理ページへ移動する設定 */
+.go_to_management_link {
+    padding-top: 10px;
+    margin-left: 20px;
+}
+/* 管理(list)ページへ戻る設定 */
+.back_to_management_link {
+    margin-top: 50px;
+    margin-left: 44%;
 }
 /* 送信完了ページ送信名前の設定 */
 .after_sending_name {
@@ -179,8 +189,24 @@
     background: #f0f8ff;
     height: 60px;
 }
-.contact_list_table tr {
+.contact_list_table td {
     background: #f0f8ff;
     height: 50px;
+    text-align: center;
+}
+/* 詳細ページテーブルの設定 */
+.contact_detail_table {
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 20px;
+    border-collapse: separate;
+}
+.contact_detail_table th {
+    background: #f0f8ff;
+    height: 60px;
+}
+.contact_detail_table td {
+    background: #f0f8ff;
+    height: 200px;
     text-align: center;
 }

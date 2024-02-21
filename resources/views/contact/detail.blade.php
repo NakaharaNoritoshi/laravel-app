@@ -2,6 +2,29 @@
 
 @section('content')
 
-<p>test</p>
+<div class="contact_form_title">
+    <h2>お問い合わせ詳細</h2>
+</div>
+
+<table class="contact_detail_table">
+    <tr>
+        <th>お問い合わせタイトル</th>
+        <th>お問い合わせ内容</th>
+    </tr>
+        <tr>
+            <td>{{ $contact->title }}</td>
+            <td>{{ $contact->content }}</td>
+        </tr>
+</table>
+
+<div class="contact_form_link">
+    <div class="back_to_management_link">
+        <a href="{{ route('contact.list') }}">お問い合わせ管理へ戻る</a>
+    </div>
+
+    <div class="back_to_top_link">
+        <a href="{{ route('contact.index') }}">TOPへ戻る</a>
+    </div>
+</div>
 
 @endsection

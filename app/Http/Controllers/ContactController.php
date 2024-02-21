@@ -54,8 +54,9 @@ class ContactController extends BaseController
         return view('contact.list', ['contact_list' => $contact_list]);
     }
 
-    public function detail()
+    public function detail($id)
     {
-        return view('contact.detail');
+        $contact = $this->contact_repository->getContactDetail($id);
+        return view('contact.detail', ['contact' => $contact]);
     }
 }

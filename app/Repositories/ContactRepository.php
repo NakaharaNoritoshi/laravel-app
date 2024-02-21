@@ -12,4 +12,11 @@ class ContactRepository
         return Contact::select('id', 'name', 'mail', 'title', 'content')
             ->get();
     }
+
+    public function getContactDetail($id)
+    {
+        return Contact::select('id', 'name', 'mail', 'title', 'content')
+            ->where('id', $id)
+            ->first();
+    }
 }
