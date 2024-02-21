@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('contact/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
+// お問い合わせlistのRoute
+Route::get('contact/list', [ContactController::class, 'list'])->name('contact.list');
+// お問い合わせ詳細のRoute
+Route::get('contact/{id}', [ContactController::class, 'detail'])->whereNumber('id')->name('contact.detail');

@@ -6,19 +6,20 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\Contact;
-use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
+use App\Repositories\ContactRepository;
+use Illuminate\Auth\Events\Validated;
 
 class ContactController extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    // protected $contact_repository;
+    protected $contact_repository;
 
-    // public function __construct(ContactRepository $contact_repository)
-    // {
-    //     $this->contact_repository = $contact_repository;
-    // }
+    public function __construct(ContactRepository $contact_repository)
+    {
+        $this->contact_repository = $contact_repository;
+    }
 
     public function index()
     {
@@ -45,5 +46,16 @@ class ContactController extends BaseController
         Contact::create($attributes);
 
         return view('contact.send', $data);
+    }
+
+    public function list()
+    {
+        $contact_list = $this->contact_repository->getContactList();
+        return view('contact.list', ['contact_list' => $contact_list]);
+    }
+
+    public function detail()
+    {
+        return view('contact.detail');
     }
 }

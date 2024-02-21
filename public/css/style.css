@@ -168,3 +168,19 @@
     font-size: 12px;
     color: red;
 }
+/* 管理ページテーブルの設定 */
+.contact_list_table {
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 20px;
+    border-collapse: separate;
+}
+.contact_list_table th {
+    background: #f0f8ff;
+    height: 60px;
+}
+.contact_list_table tr {
+    background: #f0f8ff;
+    height: 50px;
+    text-align: center;
+}
