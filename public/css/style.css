@@ -203,10 +203,18 @@
 }
 .contact_detail_table th {
     background: #f0f8ff;
-    height: 60px;
+    height: 40px;
+}
+.contact_detail_table_left {
+    width: 30%;
+    padding: 20px 30px;
 }
 .contact_detail_table td {
     background: #f0f8ff;
     height: 200px;
     text-align: center;
+}
+.contact_detail_table_right {
+    width: 60%;
+    padding: 20px 30px;
 }

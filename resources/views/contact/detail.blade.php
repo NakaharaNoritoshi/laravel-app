@@ -8,13 +8,13 @@
 
 <table class="contact_detail_table">
     <tr>
-        <th>お問い合わせタイトル</th>
-        <th>お問い合わせ内容</th>
+        <th class="contact_detail_table_left">お問い合わせタイトル</th>
+        <th class="contact_detail_table_right">お問い合わせ内容</th>
     </tr>
-        <tr>
-            <td>{{ $contact->title }}</td>
-            <td>{{ $contact->content }}</td>
-        </tr>
+    <tr>
+        <td class="contact_detail_table_left">{{ $contact->title }}</td>
+        <td class="contact_detail_table_right">{{ $contact->content }}</td>
+    </tr>
 </table>
 
 <div class="contact_form_link">

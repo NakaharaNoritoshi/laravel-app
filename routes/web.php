@@ -25,3 +25,7 @@ Route::post('contact/send', [ContactController::class, 'send'])->name('contact.s
 Route::get('contact/list', [ContactController::class, 'list'])->name('contact.list');
 // お問い合わせ詳細のRoute
 Route::get('contact/{id}', [ContactController::class, 'detail'])->whereNumber('id')->name('contact.detail');
+// お問い合わせを削除するRoute
+// Route::post('contact/destroy{id}', [ContactController::class, 'destroy'])->whereNumber('id')->name('contact.destroy');
+Route::post('contact/{id}/destroy', [ContactController::class, 'destroy'])->whereNumber('id')->name('destroy');
+
