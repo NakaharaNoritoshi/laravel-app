@@ -2,6 +2,10 @@
 
 @section('content')
 
+<div class="back_to_top_link_list">
+    <a href="{{ route('contact.index') }}">TOPへ戻る</a>
+</div>
+
 <div class="contact_form_title">
     <h2>お問い合わせ管理</h2>
 </div>

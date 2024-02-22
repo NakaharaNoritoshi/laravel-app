@@ -86,6 +86,7 @@
     font-size: 18px;
     border-left: 5px solid #b0c4de;
     margin-left: 25%;
+    padding-left: 5px;
 }
 /* 必須項目マークの設定 */
 .required_item_mark {
@@ -157,6 +158,10 @@
     margin-top: 50px;
     margin-left: 47%;
 }
+/* 管理ページからTOP(index)ページへ戻る設定 */
+.back_to_top_link_list {
+    margin-left: 20px;
+}
 /* indexから管理ページへ移動する設定 */
 .go_to_management_link {
     padding-top: 10px;
@@ -225,6 +230,7 @@
 .contact_detail_detail {
     margin-right: 10px;
     border: 1px solid #c0c0c0;
+    border-radius: 5px;
 }
 .contact_detail_detail:hover {
     background: #4169e1;
@@ -232,6 +238,7 @@
 }
 .contact_detail_destroy {
     border: 1px solid #c0c0c0;
+    border-radius: 5px;
 }
 .contact_detail_destroy:hover {
     background: #ff6347;
