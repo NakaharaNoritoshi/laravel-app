@@ -105,14 +105,12 @@
 }
 /* お問い合わせフォーム。お客様の情報、お問い合わせ内容、テーブル枠の設定 */
 .contact_form_table_left {
-    /* border-top: 1px solid #dcdcdc; */
     border-bottom: 1px solid #dcdcdc;
     height: 70px;
     width: 300px;
     padding-left: 25px;
 }
 .contact_form_table_right {
-    /* border-top: 1px solid #dcdcdc; */
     border-bottom: 1px solid #dcdcdc;
     height: 50px;
     width: 400px;
@@ -217,4 +215,25 @@
 .contact_detail_table_right {
     width: 60%;
     padding: 20px 30px;
+}
+/* お問い合わせ管理ページ、詳細/削除ボタンの設定 */
+.contact_detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact_detail_detail {
+    margin-right: 10px;
+    border: 1px solid #c0c0c0;
+}
+.contact_detail_detail:hover {
+    background: #4169e1;
+    color: #fff;
+}
+.contact_detail_destroy {
+    border: 1px solid #c0c0c0;
+}
+.contact_detail_destroy:hover {
+    background: #ff6347;
+    color: #fff;
 }
