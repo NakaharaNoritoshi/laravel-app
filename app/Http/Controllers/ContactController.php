@@ -60,13 +60,6 @@ class ContactController extends BaseController
         return view('contact.detail', ['contact' => $contact]);
     }
 
-    // public function destroy($id)
-    // {
-    //     // $contact = Contact::where(['id' => $id])->first();
-    //     $contact = Contact::find($id);
-    //     $contact->delete();
-    //     return redirect()->route('contact.list', ['id' => $id]);
-    // }
     public function destroy($id)
     {
         $contact = Contact::find($id);
