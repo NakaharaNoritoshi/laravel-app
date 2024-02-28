@@ -53,9 +53,13 @@
             </td>
         </tr>
         <tr>
-            <td class="contact_form_table_left"></td>
+            <td class="contact_form_table_left">
+                @if ($errors->has('mail_confirmation'))
+                    <span class="validation_error_statement">{{$errors->first('mail_confirmation')}}</span>
+                @endif
+            </td>
             <td class="contact_form_table_right">
-                <input type="text" name="mail_confimation" placeholder="確認のためもう1度入力してください" required value="{{ old('mail') }}">
+                <input type="text" name="mail_confirmation" placeholder="確認のためもう1度入力してください" required value="{{ old('mail') }}">
             </td>
         </tr>
     </table>

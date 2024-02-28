@@ -37,7 +37,7 @@
         <tr>
             <td class="contact_form_table_left"></td>
             <td class="contact_form_table_right">
-                <input type="hidden" name="mail_confimation" value="{{ $mail }}">{{ $mail }}
+                <input type="hidden" name="mail_confirmation" value="{{ $mail }}">{{ $mail }}
             </td>
         </tr>
     </table>
