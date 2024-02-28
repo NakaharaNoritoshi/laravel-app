@@ -30,7 +30,8 @@ class ContactController extends BaseController
     {
         $request->validate([
             'name' => 'required',
-            'mail' => 'required',
+            'mail' => 'required|email',
+            'mail_confirmation' => 'required|email|same:mail',
             'title' => 'required',
             'content' => 'required',
         ]);
