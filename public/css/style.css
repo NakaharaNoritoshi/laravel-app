@@ -1,0 +1,246 @@
+@charset "UTF-8";
+
+/* お問い合わせフォームタイトル */
+.contact_form_title h2 {
+    background-color: #b0c4de;
+    font-size: 32px;
+    text-align: center;
+}
+/* お問い合わせフォーム下の3つのリスト */
+.contact_form_list {
+    display: flex;
+    justify-content: center;
+}
+/* 1つ目(contact) */
+.contact_form_list_first {
+    background-color: #b0c4de;
+    margin-right: 20px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    padding: 10px 0;
+}
+/* 2つ目(contact) */
+.contact_form_list_second {
+    margin-right: 20px;
+    padding: 10px 0;
+}
+.contact_form_list_second,.contact_form_list_third {
+    background-color: #b0c4de;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    opacity: 50%;
+}
+/* 3つ目(contact) */
+.contact_form_list_third {
+    padding-top: 20px;
+}
+/* 4つ目(confirm) */
+.contact_form_list_fourth {
+    background-color: #c0c0c0;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    margin-right: 20px;
+    padding: 10px 0
+}
+/* 5つ目(confirm) */
+.contact_form_list_fifth {
+    background-color: #b0c4de;
+    margin-right: 20px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    padding: 10px 0;
+}
+/* 6つ目(confirm) */
+.contact_form_list_sixth {
+    background-color: #b0c4de;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    padding: 20px 0;
+    opacity: 50%;
+}
+/* 7つ目(send)、8つ目(send) */
+.contact_form_list_seventh, .contact_form_list_eighth {
+    background-color: #c0c0c0;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    margin-right: 20px;
+    padding: 10px 0
+}
+/* 9つ目(send) */
+.contact_form_list_ninth {
+    background-color: #b0c4de;
+    margin-right: 20px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    padding: 20px 0;
+}
+/* お問い合わせフォーム。お客様の情報、お問い合わせ内容のタイトル */
+.contact_form_mini_title {
+    font-size: 18px;
+    border-left: 5px solid #b0c4de;
+    margin-left: 25%;
+    padding-left: 5px;
+}
+/* 必須項目マークの設定 */
+.required_item_mark {
+    font-size: 24px;
+    color: red;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.required_item_sentence {
+    font-size: 12px;
+    color: red;
+    margin-left: 25%;
+}
+/* お問い合わせフォーム。テーブルの設定 */
+.contact_form_table {
+    margin-left: 25%;
+}
+/* お問い合わせフォーム。お客様の情報、お問い合わせ内容、テーブル枠の設定 */
+.contact_form_table_left {
+    border-bottom: 1px solid #dcdcdc;
+    height: 70px;
+    width: 300px;
+    padding-left: 25px;
+}
+.contact_form_table_right {
+    border-bottom: 1px solid #dcdcdc;
+    height: 50px;
+    width: 400px;
+}
+/* お問い合わせフォーム。お客様の情報、お問い合わせ内容、記入欄の設定 */
+.contact_form_table_right input {
+    border: 1px solid #dcdcdc;
+    height: 50px;
+    width: 400px;
+    border-radius: 5px;
+    padding-left: 20px;
+}
+.contact_form_table_right textarea {
+    border: 1px solid #dcdcdc;
+    height: 50px;
+    width: 400px;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-family: sans-serif;
+}
+/* お問い合わせフォーム。送信ボタンの設定 */
+.contact_form_button {
+    margin-top: 30px;
+    margin-left: 50%;
+}
+.contact_form_button_set input {
+    background: #b0c4de;
+    border: 1px solid #a9a9a9;
+    border-radius: 5px;
+    height: 40px;
+    width: 70px;
+}
+.contact_form_button_set input:hover {
+    background: #e6e6fa;
+}
+/* 送信完了ページtextの設定 */
+.contact_form_complete {
+    text-align: center;
+    margin-top: 50px;
+}
+/* TOP(index)ページへ戻る設定 */
+.back_to_top_link {
+    margin-top: 50px;
+    margin-left: 47%;
+}
+/* 管理ページからTOP(index)ページへ戻る設定 */
+.back_to_top_link_list {
+    margin-left: 20px;
+}
+/* indexから管理ページへ移動する設定 */
+.go_to_management_link {
+    padding-top: 10px;
+    margin-left: 20px;
+}
+/* 管理(list)ページへ戻る設定 */
+.back_to_management_link {
+    margin-top: 50px;
+    margin-left: 44%;
+}
+/* 送信完了ページ送信名前の設定 */
+.after_sending_name {
+    color: #ffa500;
+}
+/* validationエラー時に出る文 */
+.validation_error_statement {
+    font-size: 12px;
+    color: red;
+}
+/* 管理ページテーブルの設定 */
+.contact_list_table {
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 20px;
+    border-collapse: separate;
+}
+.contact_list_table th {
+    background: #f0f8ff;
+    height: 60px;
+}
+.contact_list_table td {
+    background: #f0f8ff;
+    height: 50px;
+    text-align: center;
+}
+/* 詳細ページテーブルの設定 */
+.contact_detail_table {
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 20px;
+    border-collapse: separate;
+}
+.contact_detail_table th {
+    background: #f0f8ff;
+    height: 40px;
+}
+.contact_detail_table_left {
+    width: 30%;
+    padding: 20px 30px;
+}
+.contact_detail_table td {
+    background: #f0f8ff;
+    height: 200px;
+    text-align: center;
+}
+.contact_detail_table_right {
+    width: 60%;
+    padding: 20px 30px;
+}
+/* お問い合わせ管理ページ、詳細/削除ボタンの設定 */
+.contact_detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact_detail_detail {
+    margin-right: 10px;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+}
+.contact_detail_detail:hover {
+    background: #4169e1;
+    color: #fff;
+}
+.contact_detail_destroy {
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+}
+.contact_detail_destroy:hover {
+    background: #ff6347;
+    color: #fff;
+}
