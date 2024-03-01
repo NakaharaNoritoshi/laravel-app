@@ -116,6 +116,20 @@
     height: 50px;
     width: 400px;
 }
+/* お問い合わせフォーム。checkboxの設定 */
+.contact_form_checkbox {
+    display: flex;
+    justify-content: start;
+}
+.contact_form_checkbox input[type=checkbox] {
+    transform: scale(0.8);
+    width: 20px;
+    height: 20px;
+}
+.contact_form_checkbox_reply {
+    width: 70px;
+    height: 20px;
+}
 /* お問い合わせフォーム。お客様の情報、お問い合わせ内容、記入欄の設定 */
 .contact_form_table_right input {
     border: 1px solid #dcdcdc;

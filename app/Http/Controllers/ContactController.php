@@ -23,7 +23,7 @@ class ContactController extends BaseController
 
     public function index()
     {
-        return view('contact.index');
+        return view('contact_front.index');
     }
 
     public function confirm(Request $request)
@@ -34,37 +34,45 @@ class ContactController extends BaseController
             'mail_confirmation' => 'required|email|same:mail',
             'title' => 'required',
             'content' => 'required',
+            'checkbox' => 'required',
+            'category' => 'required|numeric|between:1,5',
         ]);
-        $data = $request->only(['name', 'mail', 'mail_confirmation', 'title', 'content']);
+        $data = $request->only(['name', 'mail', 'mail_confirmation', 'title', 'content', 'category', 'reply']);
+        // dump($data);
+        $checkbox_array = [];
+        foreach($request->input('checkbox') as $values) {
+            $checkbox_array[] = $values;
+        }
 
-        return view('contact.confirm', $data);
+        return view('contact_front.confirm', $data, ['values' => $values]);
     }
 
     public function send(Request $request)
     {
         $data = $request->only(['name']);
-        $attributes = $request->only(['name', 'mail', 'mail_confirmation', 'title', 'content']);
+        $attributes = $request->only(['name', 'mail', 'mail_confirmation', 'title', 'content', 'category', 'reply']);
+        $attributes['reply'] = $request->input('checkbox');
         Contact::create($attributes);
 
-        return view('contact.send', $data);
+        return view('contact_front.send', $data);
     }
 
     public function list()
     {
         $contact_list = $this->contact_repository->getContactList();
-        return view('contact.list', ['contact_list' => $contact_list]);
+        return view('contact_back.list', ['contact_list' => $contact_list]);
     }
 
     public function detail($id)
     {
         $contact = $this->contact_repository->getContactDetail($id);
-        return view('contact.detail', ['contact' => $contact]);
+        return view('contact_back.detail', ['contact' => $contact]);
     }
 
     public function destroy($id)
     {
         $contact = Contact::find($id);
         $contact->delete();
-        return redirect()->route('contact.list');
+        return redirect()->route('contact_back.list');
     }
 }

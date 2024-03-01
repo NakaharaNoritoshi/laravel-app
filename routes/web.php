@@ -20,13 +20,13 @@ Route::get('/', function () {
 });
 
 // お問い合わせのRoute
-Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
-Route::post('contact/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
-Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
+Route::get('contact', [ContactController::class, 'index'])->name('contact_front.index');
+Route::post('contact/confirm', [ContactController::class, 'confirm'])->name('contact_front.confirm');
+Route::post('contact/send', [ContactController::class, 'send'])->name('contact_front.send');
 // お問い合わせ管理一覧のRoute
-Route::get('contact/list', [ContactController::class, 'list'])->name('contact.list');
+Route::get('contact/list', [ContactController::class, 'list'])->name('contact_back.list');
 // お問い合わせ詳細のRoute
-Route::get('contact/{id}', [ContactController::class, 'detail'])->whereNumber('id')->name('contact.detail');
+Route::get('contact/{id}', [ContactController::class, 'detail'])->whereNumber('id')->name('contact_back.detail');
 // お問い合わせを削除するRoute
 Route::delete('contact/{id}', [ContactController::class, 'destroy'])->name('destroy');
 

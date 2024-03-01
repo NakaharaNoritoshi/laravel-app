@@ -20,7 +20,7 @@
 
 <div class="contact_form_link">
     <div class="back_to_top_link">
-        <a href="{{ route('contact.index') }}">TOPへ戻る</a>
+        <a href="{{ route('contact_front.index') }}">TOPへ戻る</a>
     </div>
 </div>
 

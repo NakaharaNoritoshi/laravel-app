@@ -19,11 +19,11 @@
 
 <div class="contact_form_link">
     <div class="back_to_management_link">
-        <a href="{{ route('contact.list') }}">お問い合わせ管理へ戻る</a>
+        <a href="{{ route('contact_back.list') }}">お問い合わせ管理へ戻る</a>
     </div>
 
     <div class="back_to_top_link">
-        <a href="{{ route('contact.index') }}">TOPへ戻る</a>
+        <a href="{{ route('contact_front.index') }}">TOPへ戻る</a>
     </div>
 </div>
 

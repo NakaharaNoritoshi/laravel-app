@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="back_to_top_link_list">
-    <a href="{{ route('contact.index') }}">TOPへ戻る</a>
+    <a href="{{ route('contact_front.index') }}">TOPへ戻る</a>
 </div>
 
 <div class="contact_form_title">
@@ -21,7 +21,7 @@
             <td>{{ $contact->name }}</td>
             <td>{{ $contact->mail }}</td>
             <td class="contact_detail">
-                <a href="{{ route('contact.detail', $contact->id) }}">
+                <a href="{{ route('contact_back.detail', $contact->id) }}">
                     <button class="contact_detail_detail">詳細</button>
                 </a>
                 <form action="{{ route('destroy', ['id'=>$contact->id]) }}" method="post">

@@ -23,6 +23,8 @@ class Contact extends Model
         'mail',
         'title',
         'content',
+        'reply',
+        'category',
     ];
 
     /**
