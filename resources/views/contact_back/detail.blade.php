@@ -8,10 +8,18 @@
 
 <table class="contact_detail_table">
     <tr>
-        <th class="contact_detail_table_left">お問い合わせタイトル</th>
-        <th class="contact_detail_table_right">お問い合わせ内容</th>
+        <th class="contact_detail_table_name">お名前</th>
+        <th class="contact_detail_table_mail">メール<br>アドレス</th>
+        <th class="contact_detail_table_reply">返答</th>
+        <th class="contact_detail_table_category">カテゴリー</th>
+        <th class="contact_detail_table_title">お問い合わせ<br>タイトル</th>
+        <th class="contact_detail_table_content">お問い合わせ内容</th>
     </tr>
     <tr>
+        <td>{{ $contact->name }}</td>
+        <td>{{ $contact->mail }}</td>
+        <td>{{ $contact->reply }}</td>
+        <td>{{ $contact->category }}</td>
         <td class="contact_detail_table_left">{{ $contact->title }}</td>
         <td class="contact_detail_table_right">{{ $contact->content }}</td>
     </tr>

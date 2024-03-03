@@ -210,30 +210,23 @@
     background: #f0f8ff;
     height: 50px;
     text-align: center;
+    padding: 10px 10px;
 }
-/* 詳細ページテーブルの設定 */
-.contact_detail_table {
-    width: 90%;
-    margin: 0 5%;
-    margin-top: 20px;
-    border-collapse: separate;
+/* 管理ページテーブル格タイトル(th)の設定 */
+.contact_list_table_name {
+    width: 10%;
 }
-.contact_detail_table th {
-    background: #f0f8ff;
-    height: 40px;
+.contact_list_table_mail {
+    width: 40%;
 }
-.contact_detail_table_left {
-    width: 30%;
-    padding: 20px 30px;
+.contact_list_table_reply {
+    width: 10%;
 }
-.contact_detail_table td {
-    background: #f0f8ff;
-    height: 200px;
-    text-align: center;
+.contact_list_table_category {
+    width: 10%;
 }
-.contact_detail_table_right {
-    width: 60%;
-    padding: 20px 30px;
+.contact_list_table_detail {
+    width: 20%;
 }
 /* お問い合わせ管理ページ、詳細/削除ボタンの設定 */
 .contact_detail {
@@ -257,4 +250,51 @@
 .contact_detail_destroy:hover {
     background: #ff6347;
     color: #fff;
+}
+/* 詳細ページテーブルの設定 */
+.contact_detail_table {
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 20px;
+    border-collapse: separate;
+}
+.contact_detail_table th {
+    background: #f0f8ff;
+    height: 60px;
+}
+.contact_detail_table td {
+    background: #f0f8ff;
+    height: 50px;
+    text-align: center;
+    padding: 10px 10px;
+}
+/* 詳細ページ格タイトル(th)の設定 */
+.contact_detail_table_name {
+    width: 10%;
+}
+.contact_detail_table_mail {
+    width: 10%;
+}
+.contact_detail_table_reply {
+    width: 10%;
+}
+.contact_detail_table_category {
+    width: 10%;
+}
+.contact_detail_table_title {
+    width: 10%;
+}
+.contact_detail_table_content {
+    width: 40%;
+}
+/* ページネーション(pagination)の設定 */
+.pagination {
+    text-align: center;
+}
+.pagination li {
+    display: inline-block;
+}
+.contact_list_table_display {
+    text-align: center;
+    font-size: 10px;
 }

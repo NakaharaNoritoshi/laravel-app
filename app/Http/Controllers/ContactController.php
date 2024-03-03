@@ -9,6 +9,7 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Repositories\ContactRepository;
 use Illuminate\Auth\Events\Validated;
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends BaseController
 {
@@ -60,7 +61,11 @@ class ContactController extends BaseController
     public function list()
     {
         $contact_list = $this->contact_repository->getContactList();
-        return view('contact_back.list', ['contact_list' => $contact_list]);
+        $contact_list = Contact::paginate(5);
+
+        return view('contact_back.list', [
+            'contact_list' => $contact_list,
+        ]);
     }
 
     public function detail($id)

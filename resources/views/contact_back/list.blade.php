@@ -12,14 +12,18 @@
 
 <table class="contact_list_table">
     <tr>
-        <th>お名前</th>
-        <th>メールアドレス</th>
-        <th>詳細&nbsp;/&nbsp;削除</th>
+        <th class="contact_list_table_name">お名前</th>
+        <th class="contact_list_table_mail">メールアドレス</th>
+        <th class="contact_list_table_reply">返答</th>
+        <th class="contact_list_table_category">カテゴリー</th>
+        <th class="contact_list_table_detail">詳細&nbsp;/&nbsp;削除</th>
     </tr>
     @foreach ($contact_list as $contact)
         <tr>
             <td>{{ $contact->name }}</td>
             <td>{{ $contact->mail }}</td>
+            <td>{{ $contact->reply }}</td>
+            <td>{{ $contact->category }}</td>
             <td class="contact_detail">
                 <a href="{{ route('contact_back.detail', $contact->id) }}">
                     <button class="contact_detail_detail">詳細</button>
@@ -33,5 +37,10 @@
         </tr>
     @endforeach
 </table>
+
+{{ $contact_list->onEachSide(0)->links('vendor.pagination.bootstrap-4') }}
+    <div class="contact_list_table_display">
+        {{ $contact_list->firstItem() }}〜{{ $contact_list->lastItem() }}件を表示 / {{ $contact_list->total() }}件中
+    </div>
 
 @endsection
