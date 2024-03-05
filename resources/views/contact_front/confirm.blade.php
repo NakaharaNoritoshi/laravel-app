@@ -16,7 +16,7 @@
     <h3>お客様の情報を入力してください</h3>
 </div>
 
-<form method="post" action="{{ route('contact.send') }}">@csrf
+<form method="post" action="{{ route('contact_front.send') }}">@csrf
     <table class="contact_form_table">
         <tr>
             <td class="contact_form_table_left">お名前
@@ -46,6 +46,28 @@
         <h3>お問い合わせ内容を入力してください</h3>
     </div>
     <table class="contact_form_table">
+        <!-- replyのチェックボックス -->
+        <tr>
+            <td class="contact_form_table_left">返答
+                <span class="required_item_mark">*</span>
+            </td>
+            <td class="contact_form_table_right">
+                <div class="contact_form_checkbox">
+                    @foreach($values as $value)
+                        <input type="hidden" name="checkbox" value="{{ $value }}">{{ $value }}
+                    @endforeach
+                </div>
+            </td>
+        </tr>
+         <!-- categoryのプルダウン -->
+         <tr>
+            <td class="contact_form_table_left">カテゴリー
+                <span class="required_item_mark">*</span>
+            </td>
+            <td class="contact_form_table_right">
+                <input type="hidden" name="category" value="{{ $category }}">{{ $category }}
+            </td>
+        </tr>
         <tr>
             <td class="contact_form_table_left">タイトル
                 <span class="required_item_mark">*</span>

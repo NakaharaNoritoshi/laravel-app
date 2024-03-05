@@ -116,6 +116,20 @@
     height: 50px;
     width: 400px;
 }
+/* お問い合わせフォーム。checkboxの設定 */
+.contact_form_checkbox {
+    display: flex;
+    justify-content: start;
+}
+.contact_form_checkbox input[type=checkbox] {
+    transform: scale(0.8);
+    width: 20px;
+    height: 20px;
+}
+.contact_form_checkbox_reply {
+    width: 70px;
+    height: 20px;
+}
 /* お問い合わせフォーム。お客様の情報、お問い合わせ内容、記入欄の設定 */
 .contact_form_table_right input {
     border: 1px solid #dcdcdc;
@@ -196,32 +210,25 @@
     background: #f0f8ff;
     height: 50px;
     text-align: center;
+    padding: 10px 10px;
 }
-/* 詳細ページテーブルの設定 */
-.contact_detail_table {
-    width: 90%;
-    margin: 0 5%;
-    margin-top: 20px;
-    border-collapse: separate;
+/* 管理ページテーブル格タイトル(th)の設定 */
+.contact_list_table_name {
+    width: 10%;
 }
-.contact_detail_table th {
-    background: #f0f8ff;
-    height: 40px;
+.contact_list_table_mail {
+    width: 40%;
 }
-.contact_detail_table_left {
-    width: 30%;
-    padding: 20px 30px;
+.contact_list_table_reply {
+    width: 10%;
 }
-.contact_detail_table td {
-    background: #f0f8ff;
-    height: 200px;
-    text-align: center;
+.contact_list_table_category {
+    width: 10%;
 }
-.contact_detail_table_right {
-    width: 60%;
-    padding: 20px 30px;
+.contact_list_table_detail {
+    width: 20%;
 }
-/* お問い合わせ管理ページ、詳細/削除ボタンの設定 */
+/* 管理ページ、詳細/削除ボタンの設定 */
 .contact_detail {
     display: flex;
     justify-content: center;
@@ -243,4 +250,80 @@
 .contact_detail_destroy:hover {
     background: #ff6347;
     color: #fff;
+}
+/* 管理ページ検索機能の設定 */
+.contact_list_search {
+    margin-left: 70%;
+}
+.contact_list_search_column {
+    border: 1px solid #999;
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    margin-right: 5px;
+    padding-left: 20px;
+}
+.contact_list_search_button {
+    -webkit-mask-image: url('storage/app/public/common/img/icons/search.svg');
+    mask-image: url('storage/app/public/common/img/icons/search.svg');
+    background: #4169e1;
+    color: #4169e1;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+/* ハイライト処理(管理ページで絞り込んだデータと一致するものに色をつける) */
+.contact_list_table_datacolumn .highlighted {
+    /* background: #ffd700; */
+    color: #ffa500;
+}
+/* 詳細ページテーブルの設定 */
+.contact_detail_table {
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 20px;
+    border-collapse: separate;
+}
+.contact_detail_table th {
+    background: #f0f8ff;
+    height: 60px;
+}
+.contact_detail_table td {
+    background: #f0f8ff;
+    height: 50px;
+    text-align: center;
+    padding: 10px 10px;
+}
+/* 詳細ページ格タイトル(th)の設定 */
+.contact_detail_table_name {
+    width: 10%;
+}
+.contact_detail_table_mail {
+    width: 10%;
+}
+.contact_detail_table_reply {
+    width: 10%;
+}
+.contact_detail_table_category {
+    width: 10%;
+}
+.contact_detail_table_title {
+    width: 10%;
+}
+.contact_detail_table_content {
+    width: 40%;
+}
+/* ページネーション(pagination)の設定 */
+.pagination {
+    text-align: center;
+}
+.pagination li {
+    display: inline-block;
+}
+.contact_list_table_display {
+    text-align: center;
+    font-size: 10px;
 }
