@@ -58,13 +58,14 @@ class ContactController extends BaseController
         return view('contact_front.send', $data);
     }
 
-    public function list()
+    public function list(Request $request)
     {
-        $contact_list = $this->contact_repository->getContactList();
-        $contact_list = Contact::paginate(5);
+        $keyword = $request->input('keyword');
+        $contact_list = $this->contact_repository->getContactList(5, $keyword);
 
         return view('contact_back.list', [
             'contact_list' => $contact_list,
+            'keyword' => $keyword,
         ]);
     }
 

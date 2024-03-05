@@ -7,10 +7,14 @@ use Illuminate\Support\Facades\DB;
 
 class ContactRepository
 {
-    public function getContactList()
+    public function getContactList($limit, $keyword)
     {
-        return Contact::select('id', 'name', 'mail', 'title', 'content', 'reply', 'category')
-            ->get();
+        $query = Contact::select('id', 'name', 'mail', 'title', 'content', 'reply', 'category');
+        if (!empty($keyword)) {
+            $query->where("reply", "LIKE", "%{$keyword}%")
+                ->orWhere("category", "LIKE", "%{$keyword}%");
+        }
+        return $query->paginate($limit);
     }
 
     public function getContactDetail($id)

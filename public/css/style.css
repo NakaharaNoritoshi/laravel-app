@@ -228,7 +228,7 @@
 .contact_list_table_detail {
     width: 20%;
 }
-/* お問い合わせ管理ページ、詳細/削除ボタンの設定 */
+/* 管理ページ、詳細/削除ボタンの設定 */
 .contact_detail {
     display: flex;
     justify-content: center;
@@ -250,6 +250,35 @@
 .contact_detail_destroy:hover {
     background: #ff6347;
     color: #fff;
+}
+/* 管理ページ検索機能の設定 */
+.contact_list_search {
+    margin-left: 70%;
+}
+.contact_list_search_column {
+    border: 1px solid #999;
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    margin-right: 5px;
+    padding-left: 20px;
+}
+.contact_list_search_button {
+    -webkit-mask-image: url('storage/app/public/common/img/icons/search.svg');
+    mask-image: url('storage/app/public/common/img/icons/search.svg');
+    background: #4169e1;
+    color: #4169e1;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+/* ハイライト処理(管理ページで絞り込んだデータと一致するものに色をつける) */
+.contact_list_table_datacolumn .highlighted {
+    /* background: #ffd700; */
+    color: #ffa500;
 }
 /* 詳細ページテーブルの設定 */
 .contact_detail_table {
