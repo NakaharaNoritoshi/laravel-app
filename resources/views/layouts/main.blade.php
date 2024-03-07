@@ -4,11 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title>お問い合わせフォーム</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @livewireStyles
+    @vite(['resources/css/app.css', 'public/css/style.css', 'resources/js/api.js'])
 </head>
 
 <body>
     @yield('content')
+    @livewireScripts
+    {{-- <script defer src="{{ mix('resources/js/api.js') }}"></script> --}}
 </body>
-
+    <script defer src="{{ mix('resources/js/api.js') }}"></script>
 </html>

@@ -4,7 +4,7 @@
 
 @if(Auth::check())
     <div class="go_to_management_link">
-        <a href="{{ route('contact_back.list') }}">お問い合わせ管理へ移動する</a>
+        <a href="{{ route('contact_back.list') }}">お問い合わせ管理<br>へ移動する</a>
     </div>
 @else
     <a href="{{ route('login')}}">お問い合わせ管理へ移動する</a>
@@ -99,7 +99,6 @@
             </td>
             <td class="contact_form_table_right">
                 <label class="contact_form_category"></label>
-                {{-- <select class="contact_form_reply_control" name="contact_form_category_id" id="contact_form_category_id"> --}}
                     <select class="contact_form_reply_control" name="category">
                         @foreach(Config::get('pulldown.pull_down') as $key => $val)
                             <option type="pulldown" value="{{ $key }}">{{ $val }}</option>

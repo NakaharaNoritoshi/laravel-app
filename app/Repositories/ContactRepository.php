@@ -9,7 +9,7 @@ class ContactRepository
 {
     public function getContactList($limit, $keyword)
     {
-        $query = Contact::select('id', 'name', 'mail', 'title', 'content', 'reply', 'category');
+        $query = Contact::select('id', 'name', 'mail', 'title', 'content', 'reply', 'category', 'updated_at');
         if (!empty($keyword)) {
             $query->where("reply", "LIKE", "%{$keyword}%")
                 ->orWhere("category", "LIKE", "%{$keyword}%");
