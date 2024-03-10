@@ -1,10 +1,12 @@
-    const startBtn = document.querySelector('#start-btn');
-    const stopBtn = document.querySelector('#stop-btn');
-    const resultDiv = document.querySelector('#result-div');
 
-    if (startBtn && stopBtn && resultDiv) {
+// 音声認識の設定
+const startBtn = document.querySelector('#contact_list_voice_search_start');
+const stopBtn = document.querySelector('#contact_list_voice_search_stop');
+const resultInput = document.querySelector('#contact_list_voice_search_result');
+
+    if (startBtn && stopBtn && resultInput) {
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        const recognition = new SpeechRecognition();
+        let recognition = new SpeechRecognition();
 
     recognition.lang = 'ja-JP';
     recognition.interimResults = true;
@@ -22,7 +24,8 @@
                 interimTranscript = transcript;
             }
         }
-        resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+        // resultInput.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+        resultInput.value = finalTranscript + interimTranscript;
     }
 
     startBtn.onclick = () => {
@@ -34,3 +37,11 @@
             } else {
                 console.error("要素が見つかりませんでした。");
             }
+
+// リセットする設定
+var clear = document.getElementById('contact_list_search_reload_clear');
+    clear.addEventListener('click', function(event) {
+        const url = new URL(location);
+        location.reload();
+    history.replaceState('', '', 'http://localhost/contact/list');
+    });

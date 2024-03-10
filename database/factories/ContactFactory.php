@@ -29,7 +29,7 @@ class ContactFactory extends Factory
             'name' => $this->faker->lastName.$this->faker->firstName,
             'mail' => $this->faker->unique()->safeEmail(),
             'reply' => $this->faker->randomElement(['普通', '急ぎ', '少し急ぎ']),
-            'category' => rand(1, 5),
+            'category' => $this->faker->randomElement(['契約について', '解約について', '再契約について', '商品の故障について', 'その他について']),
             'title' => $this->faker->realText(10),
             'content' => $this->faker->realText(rand(50, 100)),
             'created_at' => $this->faker->dateTimeBetween('-3 year', 'now'),

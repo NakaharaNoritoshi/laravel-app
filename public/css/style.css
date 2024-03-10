@@ -271,7 +271,7 @@
 .contact_list_table_category {
     width: 10%;
 }
-.contact_list_table_update {
+.contact_list_table_create {
     width: 10%;
 }
 .contact_list_table_detail {
@@ -312,18 +312,59 @@
 }
 /* 管理ページ検索機能の設定 */
 .contact_list_search {
-    margin-top: 20px;
-    margin-left: 70%;
+    /* margin-top: 20px;
+    margin-left: 70%; */
+    position: relative;
+}
+.contact_list_search_box {
     position: absolute;
+    left: 70%;
+    top: 20px;
 }
 .contact_list_search_column { /* 検索欄 */
     border: 1px solid #999;
     border-radius: 20px;
-    width: 200px;
+    width: 250px;
     height: 40px;
-    margin-right: 5px;
     padding-left: 20px;
     font-size: 12px;
+}
+/* 管理ページ音声検索機能の設定 */
+.contact_list_voice_search {
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 83%;
+    z-index: 1;
+}
+#contact_list_voice_search_start {
+    -webkit-mask-image: url('storage/app/public/common/img/icons/mike_on.svg');
+    mask-image: url('storage/app/public/common/img/icons/mike_on.svg');
+    background: #ff4500;
+    color: #ff4500;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    width: 20px;
+    height: 20px;
+}
+#contact_list_voice_search_start:hover {
+    background: #ff7f50;
+    color: #ff7f50;
+}
+#contact_list_voice_search_stop {
+    -webkit-mask-image: url('storage/app/public/common/img/icons/mike_on.svg');
+    mask-image: url('storage/app/public/common/img/icons/mike_on.svg');
+    background: #999;
+    color: #999;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    width: 20px;
+    height: 20px;
+}
+#contact_list_voice_search_stop:hover {
+    background: #c0c0c0;
+    color: #c0c0c0;
 }
 /* お問い合わせ管理一覧。検索欄に音声検索をするためのアイコンの設定 */
 .contact_list_modal_icon { /* モーダルウィンドウのアイコン */
@@ -396,7 +437,7 @@
     top: 13px;
     left: 1.5px;
 }
-/* お問い合わせ管理一覧の検索欄にあるマイクアイコン */
+/* お問い合わせ管理一覧の検索欄にあるマイクアイコン。モーダルウインドウ */
 .contact_list_search_modal {
     -webkit-mask-image: url('storage/app/public/common/img/icons/mike.svg');
     mask-image: url('storage/app/public/common/img/icons/mike.svg');
@@ -409,10 +450,10 @@
     width: 20px;
     height: 20px;
     margin-left: 160px;
-    top: -30px;
+    top: -140px;
     cursor: pointer;
 }
-.contact_list_search_button {
+.contact_list_search_button { /* お問い合わせ管理一覧の検索欄右にある虫眼鏡アイコン */
     -webkit-mask-image: url('storage/app/public/common/img/icons/search.svg');
     mask-image: url('storage/app/public/common/img/icons/search.svg');
     background: #4169e1;
@@ -424,8 +465,63 @@
     height: 30px;
     cursor: pointer;
     position: relative;
-    margin-left: 210px;
+    margin-left: 260px;
     top: -60px;
+}
+.contact_list_search_button:hover {
+    background: #6495ed;
+    color: #6495ed;
+}
+.contact_list_search_reload { /* お問い合わせ管理一覧の虫眼鏡アイコンの右に更新アイコン */
+    -webkit-mask-image: url('storage/app/public/common/img/icons/reload.svg');
+    mask-image: url('storage/app/public/common/img/icons/reload.svg');
+    background: #000;
+    color: #000;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 5px;
+    top: -60px;
+}
+.contact_list_search_reload:hover {
+    background: #999;
+    color: #999;
+}
+/* お問い合わせ管理一覧。日付検索欄 */
+.contact_list_search_date {
+    position: absolute;
+    left: 35%;
+    top: 22px;
+}
+.contact_list_search_date_top {
+    font-size: 12px;
+    margin-right: 5px;
+}
+.contact_list_search_date_search input {
+    font-size: 12px;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+}
+.contact_list_search_date_from {
+    font-size: 12px;
+    margin: 0 5px;
+}
+.contact_list_search_date_button {
+    font-size: 12px;
+    width: 40px;
+    height: 30px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: #999;
+    margin-left: 5px;
+}
+.contact_list_search_date_button:hover {
+    background: #d3d3d3;
 }
 /* ハイライト処理(管理ページで絞り込んだデータと一致するものに色をつける) */
 .contact_list_table_datacolumn .highlighted {
@@ -484,4 +580,7 @@
 }
 .page-item a:hover {
     text-decoration: underline;
+}
+.contact_list_table_display {
+    margin-bottom: 20px;
 }

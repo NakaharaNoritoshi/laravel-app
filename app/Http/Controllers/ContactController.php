@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Repositories\ContactRepository;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class ContactController extends BaseController
 {
@@ -36,10 +37,10 @@ class ContactController extends BaseController
             'title' => 'required',
             'content' => 'required',
             'checkbox' => 'required',
-            'category' => 'required|numeric|between:1,5',
+            'category' => 'required',
         ]);
         $data = $request->only(['name', 'mail', 'mail_confirmation', 'title', 'content', 'category', 'reply']);
-        // dump($data);
+
         $checkbox_array = [];
         foreach($request->input('checkbox') as $values) {
             $checkbox_array[] = $values;
@@ -61,11 +62,15 @@ class ContactController extends BaseController
     public function list(Request $request)
     {
         $keyword = $request->input('keyword');
-        $contact_list = $this->contact_repository->getContactList(5, $keyword);
+        $from = $request->input('from');
+        $until = $request->input('until');
+        $contact_list = $this->contact_repository->getContactList(5, $keyword, $from, $until);
 
         return view('contact_back.list', [
             'contact_list' => $contact_list,
             'keyword' => $keyword,
+            'from' => $from,
+            'until' => $until,
         ]);
     }
 

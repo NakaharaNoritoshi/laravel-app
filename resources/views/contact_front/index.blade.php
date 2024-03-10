@@ -100,8 +100,8 @@
             <td class="contact_form_table_right">
                 <label class="contact_form_category"></label>
                     <select class="contact_form_reply_control" name="category">
-                        @foreach(Config::get('pulldown.pull_down') as $key => $val)
-                            <option type="pulldown" value="{{ $key }}">{{ $val }}</option>
+                        @foreach(Config::get('pulldown.pull_down') as $key)
+                            <option type="pulldown" value="{{ $key }}">{{ $key }}</option>
                         @endforeach
                     </select>
             </td>

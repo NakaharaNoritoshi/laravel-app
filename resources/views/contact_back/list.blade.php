@@ -10,18 +10,32 @@
     <h2>お問い合わせ管理</h2>
 </div>
 
-    <button id="start-btn">start</button>
-    <button id="stop-btn">stop</button>
-    <div id="result-div"></div>
+<!-- 音声認識の追加。表示先は検索機能の記入欄 -->
+<div class="contact_list_voice_search">
+    <button id="contact_list_voice_search_start">start</button>
+    <button id="contact_list_voice_search_stop">stop</button>
+</div>
 
 <!-- 検索機能の追加 -->
 <div class="contact_list_search">
     <form action="{{ route('contact_back.list') }}" method="get">
         @csrf
             <div class="contact_list_search_box">
-                <input class="contact_list_search_column" type="text" name="keyword" value="{{ $keyword }}" placeholder="キーワード検索" />
+                <input class="contact_list_search_column" type="text" id="contact_list_voice_search_result" name="keyword" value="{{ $keyword }}" placeholder="キーワード検索" />
                     @livewire('modal')
                 <input class="contact_list_search_button"  type="submit" value="検索">
+                <button class="contact_list_search_reload" id="contact_list_search_reload_clear" type="button">更新</button>
+            </div>
+
+            <!-- 日付検索機能の追加 -->
+            <div class="contact_list_search_date">
+                <div class="contact_list_search_date_search">
+                    <label for="search_date" class="contact_list_search_date_top">日付検索</label>
+                        <input type="date" name="from" id="search_date" placeholder="from_date" value="{{ $from }}">
+                            <span class="contact_list_search_date_from">〜</span>
+                        <input type="date" name="until" id="search_date" placeholder="until_date" value="{{ $until }}">
+                    <button type="submit" class="contact_list_search_date_button">検索</button>
+                </div>
             </div>
     </form>
 </div>
@@ -32,16 +46,16 @@
             <th class="contact_list_table_title">タイトル</th>
             <th class="contact_list_table_reply">返答</th>
             <th class="contact_list_table_category">カテゴリー</th>
-            <th class="contact_list_table_update">投稿日</th>
+            <th class="contact_list_table_create">投稿日</th>
             <th class="contact_list_table_detail">詳細&nbsp;/&nbsp;削除</th>
         </tr>
         @foreach ($contact_list as $contact)
             <tr class="contact_list_table_datacolumn">
-                <td>{{ $contact->name }}</td>
-                <td>{{ $contact->title }}</td>
+                <td class="@if($keyword && str_contains($contact->name, $keyword)) highlighted @endif">{{ $contact->name }}</td>
+                <td class="@if($keyword && str_contains($contact->title, $keyword)) highlighted @endif">{{ $contact->title }}</td>
                 <td class="@if($keyword && str_contains($contact->reply, $keyword)) highlighted @endif">{{ $contact->reply }}</td>
-                <td class="@if($contact->category == $keyword) highlighted @endif">{{ $contact->category }}</td>
-                <td>{{ $contact->updated_at }}</td>
+                <td class="@if($keyword && str_contains($contact->category, $keyword)) highlighted @endif">{{ $contact->category }}</td>
+                <td class="@if($from && $until && str_contains($contact->created_at, $from && $until)) highlighted @endif">{{ $contact->created_at }}</td>
                 <td class="contact_detail">
                     <!-- 詳細/削除カラムにcontent(本文)を最初の10文字取得する設定 -->
                     <div class="contact_detail_content">
@@ -62,7 +76,7 @@
         @endforeach
     </table>
 
-{{ $contact_list->appends(request()->input())->links('vendor.pagination.bootstrap-4') }}
+{{ $contact_list->withQueryString()->onEachSide(2)->links('vendor.pagination.bootstrap-4') }}
     <div class="contact_list_table_display">
         {{ $contact_list->firstItem() }}〜{{ $contact_list->lastItem() }}件を表示 / {{ $contact_list->total() }}件中
     </div>
