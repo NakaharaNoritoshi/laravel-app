@@ -131,6 +131,7 @@
     height: 20px;
 }
 .contact_form_checkbox_reply {
+    font-size: 12px;
     width: 70px;
     height: 20px;
 }
@@ -189,6 +190,7 @@
 /* TOP(index)ページへ戻る設定 */
 .back_to_top_link {
     margin-top: 50px;
+    margin-bottom: 20px;
     margin-left: 47%;
     color: #4169e1;
 }
@@ -312,8 +314,6 @@
 }
 /* 管理ページ検索機能の設定 */
 .contact_list_search {
-    /* margin-top: 20px;
-    margin-left: 70%; */
     position: relative;
 }
 .contact_list_search_box {
@@ -380,19 +380,6 @@
     user-select: none;
     transition: box-shadow 0.3s;
 }
-/* .contact_list_modal_icon { モーダルウィンドウのアイコン
-    position: relative;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #999;
-    top: -20px;
-    left: 45%;
-    bottom: 90px;
-    cursor: pointer;
-    user-select: none;
-    transition: box-shadow 0.3s;
-} */
 .contact_list_modal_icon::before,
 .contact_list_modal_icon::after { /* モーダルウィンドウアイコンのアニメーション設定 */
     content: "";
@@ -506,6 +493,7 @@
     width: 150px;
     height: 35px;
     cursor: pointer;
+    border: 1px solid #999;
 }
 .contact_list_search_date_from {
     font-size: 12px;
@@ -522,6 +510,27 @@
 }
 .contact_list_search_date_button:hover {
     background: #d3d3d3;
+}
+/* お問い合わせ管理一覧。表示件数の設定 */
+.contact_list_search_result {
+    position: absolute;
+    left: 22%;
+    top: 5px;
+}
+.contact_list_search_total_result {
+    font-size: 12px;
+    text-align: center;
+}
+.contact_list_search_display_result {
+    font-size: 12px;
+    margin-right: 5px;
+    vertical-align: text-top;
+}
+.contact_list_search_number {
+    font-size: 12px;
+    height: 40px;
+    width: 80px;
+    border: 1px solid #999;
 }
 /* ハイライト処理(管理ページで絞り込んだデータと一致するものに色をつける) */
 .contact_list_table_datacolumn .highlighted {
@@ -542,8 +551,9 @@
 .contact_detail_table td {
     background: #f0f8ff;
     height: 50px;
-    text-align: center;
-    padding: 10px 10px;
+    text-align: start;
+    padding: 10px 30px;
+    overflow-wrap: break-word;
 }
 /* 詳細ページ格タイトル(th)の設定 */
 .contact_detail_table_name {

@@ -37,6 +37,21 @@
                     <button type="submit" class="contact_list_search_date_button">検索</button>
                 </div>
             </div>
+
+            <!-- 表示件数機能の追加 -->
+            <div class="contact_list_search_result">
+                <p class="contact_list_search_total_result">総件数: {{ $contact_list->total() }}件</p>
+                    <label for="display_result" class="contact_list_search_display_result">表示件数</label>
+                    <select name="display_list" id="display_result" class="contact_list_search_number" onchange="submit();">
+                        @foreach(Config::get('result.results') as $key)
+                            @if($key === $display_list)
+                                <option value="{{ $key }}" selected>{{ $key }}</option>
+                            @else
+                                <option value="{{ $key }}">{{ $key }}</option>
+                            @endif
+                        @endforeach
+                    </select>
+            </div>
     </form>
 </div>
 

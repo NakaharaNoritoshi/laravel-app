@@ -24,7 +24,6 @@ const resultInput = document.querySelector('#contact_list_voice_search_result');
                 interimTranscript = transcript;
             }
         }
-        // resultInput.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
         resultInput.value = finalTranscript + interimTranscript;
     }
 

@@ -53,8 +53,8 @@
             </td>
             <td class="contact_form_table_right">
                 <div class="contact_form_checkbox">
-                    @foreach($values as $value)
-                        <input type="hidden" name="checkbox" value="{{ $value }}">{{ $value }}
+                    @foreach($checkbox_array as $value)
+                        <input type="hidden" name="reply[]" value="{{ $value }}">{{ $value }}
                     @endforeach
                 </div>
             </td>

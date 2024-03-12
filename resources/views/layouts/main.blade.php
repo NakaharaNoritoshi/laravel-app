@@ -11,7 +11,6 @@
 <body>
     @yield('content')
     @livewireScripts
-    {{-- <script defer src="{{ mix('resources/js/api.js') }}"></script> --}}
 </body>
     <script defer src="{{ mix('resources/js/api.js') }}"></script>
 </html>

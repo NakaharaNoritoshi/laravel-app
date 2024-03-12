@@ -10,5 +10,7 @@ return [
         'mail_confirmation' => '確認用メールアドレス',
         'title' => 'タイトル',
         'content' => 'お問い合わせ内容',
+        'checkbox' => '返答',
+        'category' => 'カテゴリー',
       ],
 ];
