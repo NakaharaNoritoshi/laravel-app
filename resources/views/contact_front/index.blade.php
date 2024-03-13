@@ -4,7 +4,7 @@
 
 @if(Auth::check())
     <div class="go_to_management_link">
-        <a href="{{ route('contact_back.list') }}">お問い合わせ管理へ移動する</a>
+        <a href="{{ route('contact_back.list') }}">お問い合わせ管理<br>へ移動する</a>
     </div>
 @else
     <a href="{{ route('login')}}">お問い合わせ管理へ移動する</a>
@@ -73,15 +73,15 @@
             <td class="contact_form_table_left">返答
                 <span class="required_item_mark">*</span>
 
-                <br>@if ($errors->has('checkbox'))
-                    <span class="validation_error_statement">{{$errors->first('checkbox')}}</span>
+                <br>@if ($errors->has('reply'))
+                    <span class="validation_error_statement">{{$errors->first('reply')}}</span>
                 @endif
 
             </td>
             <td class="contact_form_table_right">
                 <div class="contact_form_checkbox">
                     @foreach(Config::get('reply.reply_speed') as $value)
-                        <input type="checkbox" name="{{ $value[1] }}" value="{{ $value[0] }}">
+                        <input type="checkbox" name="reply[]" value="{{ $value[0] }}" @if(is_array(old('reply')) && in_array($value[0], old('reply'))) checked @endif>
                         <div class="contact_form_checkbox_reply">{{ $value[0] }}</div>
                     @endforeach
                 </div>
@@ -99,10 +99,9 @@
             </td>
             <td class="contact_form_table_right">
                 <label class="contact_form_category"></label>
-                {{-- <select class="contact_form_reply_control" name="contact_form_category_id" id="contact_form_category_id"> --}}
                     <select class="contact_form_reply_control" name="category">
-                        @foreach(Config::get('pulldown.pull_down') as $key => $val)
-                            <option type="pulldown" value="{{ $key }}">{{ $val }}</option>
+                        @foreach(Config::get('pulldown.pull_down') as $key)
+                            <option type="pulldown" required value="{{ $key }}"  @if(old('category') == $key) selected @endif>{{ $key }}</option>
                         @endforeach
                     </select>
             </td>
